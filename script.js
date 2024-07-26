@@ -67,3 +67,18 @@ function toggleTheme() {
     localStorage.theme = "light";
   }
 }
+
+//-----------------------------------Restricted fuction----------------//
+// Prevent right-click
+document.addEventListener("contextmenu", (e) => {
+  alert("Right-click is disabled.");
+  e.preventDefault();
+});
+
+// Prevent specific keyboard shortcuts
+document.onkeydown = (e) => {
+  if ((e.ctrlKey && e.key === "u") || e.key === "F12") {
+    alert("Opening developer tools is disabled.");
+    e.preventDefault();
+  }
+};
